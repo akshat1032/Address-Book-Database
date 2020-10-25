@@ -35,3 +35,10 @@ update address_book
 delete from address_book
     -> where FIRSTNAME = 'Mohan' and LASTNAME = 'Kapoor';
 ---
+#### UC6 Retreive contact using city or state
+---
+select FIRSTNAME, LASTNAME from address_book
+    -> where city = 'PATNA';
+select FIRSTNAME, LASTNAME from address_book
+    -> where state = 'BIHAR';
+---
