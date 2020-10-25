@@ -68,3 +68,9 @@ update address_book
 select type, COUNT(type) from address_book
     -> group by type;
 ---
+#### UC11 Add person to both friends family
+---
+insert into address_book(FIRSTNAME,LASTNAME,ADDRESS,CITY,STATE,ZIP,PHONE,EMAIL,TYPE,ADDRESSBOOKNAME) values
+    -> ('Sam','Bishop','Time Square','Manhattan','New York','213654','333666','sam.1@gmail.com','Friends','Casual'),
+    -> ('Akhandanand','Tripathi','Tripathi kothi','Mirzapur','Uttar Pradesh','213632','333456','kishor30oct@gmail.com','Family','Personal');
+---
