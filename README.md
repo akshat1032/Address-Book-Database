@@ -63,3 +63,8 @@ update address_book
 update address_book
     -> set ADDRESSBOOKNAME = 'Casual' where FIRSTNAME = 'Hero' or FIRSTNAME = 'Raj';
 ---
+#### UC10 Get number of contact person by type
+---
+select type, COUNT(type) from address_book
+    -> group by type;
+---
