@@ -53,3 +53,13 @@ select * from address_book
     -> where city = 'PATNA'
     -> order by FIRSTNAME;
 ---
+#### UC9 Identify address book with name and type (alter table)
+---
+alter table address_book
+    -> add ADDRESSBOOKNAME varchar(150) after EMAIL,
+    -> add TYPE varchar(150) after EMAIL;
+update address_book
+    -> set ADDRESSBOOKNAME = 'Personal' where FIRSTNAME = 'Mohan' or FIRSTNAME = 'Luv';
+update address_book
+    -> set ADDRESSBOOKNAME = 'Casual' where FIRSTNAME = 'Hero' or FIRSTNAME = 'Raj';
+---
