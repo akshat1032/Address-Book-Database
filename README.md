@@ -24,3 +24,9 @@ insert into address_book(FIRSTNAME,LASTNAME,ADDRESS,CITY,STATE,ZIP,PHONE,EMAIL) 
     -> ('Mohan','Kapoor','Rajabazaar','Mumbai','Maharashtra',769008,336987,'mohan.mumbaiz@gmail.com'),
     -> ('Raj','Singh','Lalbazaar','Patna','Bihar',800003,987564,'singhlal@yahoo.com');
 ---
+#### UC4 Edit contact using name
+---
+update address_book
+    -> set PHONE='947217426'
+    -> where FIRSTNAME = 'Mohan' and LASTNAME = 'Kapoor';
+---
