@@ -30,3 +30,8 @@ update address_book
     -> set PHONE='947217426'
     -> where FIRSTNAME = 'Mohan' and LASTNAME = 'Kapoor';
 ---
+#### UC5 Delete contact using name
+---
+delete from address_book
+    -> where FIRSTNAME = 'Mohan' and LASTNAME = 'Kapoor';
+---
