@@ -47,3 +47,9 @@ select FIRSTNAME, LASTNAME from address_book
 select count(city) from address_book;
 select count(state) from address_book;
 ---
+#### UC8 Retreive entries sorted by name
+---
+select * from address_book
+    -> where city = 'PATNA'
+    -> order by FIRSTNAME;
+---
