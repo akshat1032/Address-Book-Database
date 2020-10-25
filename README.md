@@ -18,3 +18,9 @@ create table address_book (
     -> EMAIL varchar(200) not null,
     -> PRIMARY KEY(FIRST NAME));
 ---
+#### UC3 Insert contact to address book
+---
+insert into address_book(FIRSTNAME,LASTNAME,ADDRESS,CITY,STATE,ZIP,PHONE,EMAIL) values
+    -> ('Mohan','Kapoor','Rajabazaar','Mumbai','Maharashtra',769008,336987,'mohan.mumbaiz@gmail.com'),
+    -> ('Raj','Singh','Lalbazaar','Patna','Bihar',800003,987564,'singhlal@yahoo.com');
+---
