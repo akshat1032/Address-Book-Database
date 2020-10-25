@@ -42,3 +42,8 @@ select FIRSTNAME, LASTNAME from address_book
 select FIRSTNAME, LASTNAME from address_book
     -> where state = 'BIHAR';
 ---
+#### UC7 Count city and state
+---
+select count(city) from address_book;
+select count(state) from address_book;
+---
