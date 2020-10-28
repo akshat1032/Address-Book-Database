@@ -74,3 +74,56 @@ insert into address_book(FIRSTNAME,LASTNAME,ADDRESS,CITY,STATE,ZIP,PHONE,EMAIL,T
     -> ('Sam','Bishop','Time Square','Manhattan','New York','213654','333666','sam.1@gmail.com','Friends','Casual'),
     -> ('Akhandanand','Tripathi','Tripathi kothi','Mirzapur','Uttar Pradesh','213632','333456','kishor30oct@gmail.com','Family','Personal');
 ---
+#### UC13 Implement ER Diagram and check previous queries
+##### Creating tables
+---
+create table AddressBook(
+    -> ADDRESSBOOKNAME varchar(150) primary key,
+    -> TYPE varchar(50));
+---
+---
+create table Contact(
+    -> FIRSTNAME varchar(150) not null primary key,
+    -> LASTNAME varchar(150) not null,
+    -> ADDRESS varchar(250) not null,
+    -> CITY varchar(25) not null,
+    -> STATE varchar(250) not null,
+    -> ZIP int not null,
+    -> PHONE int not null,
+    -> EMAIL varchar(50),
+    -> ADDRESSBOOKNAME varchar(150),
+    -> foreign key(ADDRESSBOOKNAME) references AddressBook(ADDRESSBOOKNAME));
+---
+##### Insert details into tables
+---
+insert into AddressBook values
+    -> ('Casual','Friends'),
+    -> ('Personal','Family'),
+    -> ('Work','Professional');
+---
+---
+insert into Contact values
+    -> ('Mohan','Kapoor','Rajabazaar','Mumbai','Maharashtra','769008','45336987','mohan.mumbaiz@gmail.com','Work'),
+    -> ('Raj','Singh','Lalbazaar','Patna','Bihar','800003','987564','singhlal@yahoo.com','Personal'),
+    -> ('Mahesh','Singh','Jaunpur','Lucknow','Uttar Pradesh','809003','945664','singhlal@yahoo.com','Casual');
+---
+##### Retreive person by city or state
+---
+select * from Contact where city = 'Patna' or state = 'Uttar Pradesh';
+---
+##### Retrieve count of city or state to understand size of address book
+---
+select city, count(city) from Contact group by city;
+select state,count(state) from Contact group by state;
+---
+##### Retrieve entries sorted by first name for a given city
+---
+select * from Contact where city = 'Patna' order by FIRSTNAME;
+---
+##### Retrieve number of contact by type
+---
+select AddressBook.TYPE, count(AddressBook.TYPE) from AddressBook
+    -> inner join Contact
+    -> on AddressBook.ADDRESSBOOKNAME = Contact.ADDRESSBOOKNAME
+    -> group by AddressBook.TYPE;
+---
